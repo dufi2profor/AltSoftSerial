@@ -21,6 +21,10 @@
  * THE SOFTWARE.
  */
 
+/*
+	dufi2profor added finishedTransmitting()
+*/
+
 // Revisions are now tracked on GitHub
 // https://github.com/PaulStoffregen/AltSoftSerial
 //
@@ -214,6 +218,10 @@ void AltSoftSerial::flushOutput(void)
 	while (tx_state) /* wait */ ;
 }
 
+bool AltSoftSerial::finishedTransmitting(void)
+{
+	return !tx_state;
+}
 
 /****************************************/
 /**            Reception               **/
