@@ -21,6 +21,11 @@
  * THE SOFTWARE.
  */
 
+/*
+	dufi2profor added finishedTransmitting() which returns true, if finished
+	transmitting on TX line
+*/
+
 #ifndef AltSoftSerial_h
 #define AltSoftSerial_h
 
@@ -57,6 +62,7 @@ public:
 	void write(uint8_t byte) { writeByte(byte); }
 	void flush() { flushInput(); }
 #endif
+	bool finishedTransmitting();
 	using Print::write;
 	static void flushInput();
 	static void flushOutput();
